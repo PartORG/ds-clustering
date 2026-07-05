@@ -1,97 +1,92 @@
-# Clustering
+# Clustering Algorithms and Techniques
 
-In this repo we will have a look at clustering.
+A comprehensive guide to clustering algorithms, customer segmentation, image clustering, and text clustering using Jupyter Notebooks.
 
-## Table of Contents
-- [Features](#features)
-- [How It Works](#how-it-works)
-- [Technology Stack](#technology-stack)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Quick Start](#quick-start)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Development](#development)
-- [Limitations](#limitations)
-- [License](#license)
+[![GitHub Actions](https://github.com/PartORG/ds-clustering/actions/workflows/workflow-07.yml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/PartORG/ds-clustering/actions/workflows/workflow-07.yml)
+[![License](https://img.shields.io/github/license/PartORG/ds-clustering)](LICENSE)
+
+## Introduction
+
+Clustering is a fundamental technique in data analysis and machine learning, used to group similar data points together. This repository provides a detailed exploration of various clustering algorithms, customer segmentation, image clustering, and text clustering using Jupyter Notebooks.
+
+### Primary Workflow
+
+1. **Comparing Clustering Algorithms**: Understand the strengths and weaknesses of different clustering techniques.
+2. **Customer Segmentation Clustering**: Apply clustering to segment customers based on their behavior and preferences.
+3. **Image Clustering**: Group images with similar visual features together.
+4. **Text Clustering (Bonus)**: Explore advanced clustering methods for text data.
+
+### Main Advantages
+
+- **Educational Value**: Learn practical applications of clustering algorithms through hands-on examples.
+- **Versatility**: Apply clustering techniques to various domains such as customer segmentation, image analysis, and text mining.
+- **Automation**: Use GitHub workflows for automated testing and notifications.
 
 ## Features
 
-### Data Visualization
-- **Matplotlib & Seaborn**: Visualize clustering results and compare different algorithms.
+### Clustering Algorithms Comparison
 
-### Machine Learning Algorithms
-- **Scikit-Learn**: Implement and evaluate various clustering algorithms like K-Means, DBSCAN, Hierarchical Clustering.
-  
-### Text Processing
-- **NLTK & Gensim**: Perform text clustering using techniques like TF-IDF and Word2Vec.
+Explore different clustering algorithms like K-Means, Hierarchical Clustering, DBSCAN, and more. Understand their use cases and performance characteristics.
 
-### Image Processing
-- **Rasterio**: Cluster images based on pixel similarity or feature extraction.
+### Customer Segmentation Clustering
+
+Learn how to segment customers based on their behavior and preferences using clustering techniques. This helps in targeted marketing and personalized customer experiences.
+
+### Image Clustering
+
+Group images with similar visual features together. This is useful for image retrieval systems, content-based filtering, and more.
+
+### Text Clustering (Bonus)
+
+Explore advanced clustering methods for text data. This includes techniques like Latent Dirichlet Allocation (LDA) and Word2Vec for text segmentation.
 
 ## How It Works
 
-The project consists of Jupyter Notebooks that guide you through the process of clustering data. Each notebook focuses on a specific type of clustering (e.g., customer segmentation, image clustering, text clustering).
+The repository is primarily written in Jupyter Notebooks. The Makefile automates the installation of Python and required packages using pyenv and pip. GitHub workflows handle various automation tasks such as testing library imports and notifying via Discord.
 
-### Workflow Diagram
-```
-+-------------------+
-| 1_Comparing_Clustering_Algorithms.ipynb |
-+-------------------+
-          |
-          v
-+-------------------+
-| 2_Clustering_for_Customer_Segmentation.ipynb |
-+-------------------+
-          |
-          v
-+-------------------+
-| 3_Clustering_Images.ipynb |
-+-------------------+
-          |
-          v
-+-------------------+
-| 4_Bonus_Clustering_Texts.ipynb |
-+-------------------+
-```
-
-## Technology Stack
+### Technology Stack
 
 | Technology | Purpose |
 |------------|---------|
-| Jupyter Notebook | Interactive environment for data analysis and visualization. |
-| Matplotlib & Seaborn | Data visualization tools. |
-| Pandas | Data manipulation and analysis library. |
-| NumPy | Numerical computing library. |
-| Scikit-Learn | Machine learning library with clustering algorithms. |
-| NLTK & Gensim | Natural language processing and text clustering libraries. |
-| Rasterio | Image processing library for reading and writing geospatial raster data. |
+| **Jupyter Notebook** | Interactive environment for data analysis and visualization. |
+| **Python** | Programming language for data manipulation and machine learning. |
+| **pyenv** | Python version manager to manage multiple Python versions. |
+| **pip** | Package installer for Python packages. |
+| **scikit-learn** | Machine learning library for clustering algorithms. |
+| **matplotlib** & **seaborn** | Libraries for data visualization. |
+| **pandas** & **numpy** | Data manipulation and numerical computing libraries. |
+| **nltk** & **gensim** | Natural language processing libraries. |
+| **rasterio** | Library for reading and writing geospatial raster data. |
+| **scipy** | Scientific computing library with advanced mathematical functions. |
 
 ## Requirements
 
 - Python 3.11.3
-- GDAL (for image processing)
+- GDAL (for image clustering)
 
 ## Installation
 
 ### macOS
+
 ```bash
 make setup
 source .venv/bin/activate
 ```
 
 ### WindowsOS
+
 For PowerShell CLI:
+
 ```powershell
 pyenv local 3.11.3
 python -m venv .venv
 .venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
 For Git-bash CLI:
+
 ```bash
 pyenv local 3.11.3
 python -m venv .venv
@@ -108,30 +103,17 @@ No specific configuration files are required.
 
 1. Fork the repository.
 2. Clone your forked repository to your local machine.
-3. Navigate to the project directory and run:
-   ```bash
-   make setup
-   source .venv/bin/activate
-   ```
-4. Open each Jupyter Notebook in sequence (`1_Comparing_Clustering_Algorithms.ipynb`, `2_Clustering_for_Customer_Segmentation.ipynb`, etc.) to follow along with the clustering tasks.
+3. Run `make setup` to set up the environment.
+4. Activate the virtual environment and run the Jupyter Notebooks in the specified order.
 
 ## Usage
 
-Each notebook provides detailed instructions and code snippets for performing clustering. Here are some example commands:
+Run the Jupyter Notebooks in the following order:
 
-- **K-Means Clustering**:
-  ```python
-  from sklearn.cluster import KMeans
-  kmeans = KMeans(n_clusters=3)
-  kmeans.fit(data)
-  ```
-
-- **DBSCAN Clustering**:
-  ```python
-  from sklearn.cluster import DBSCAN
-  dbscan = DBSCAN(eps=0.5, min_samples=10)
-  dbscan.fit(data)
-  ```
+1. [Comparing Clustering Algorithms](1_Comparing_Clustering_Algorithms.ipynb)
+2. [Clustering for Customer Segmentation](2_Clustering_for_Customer_Segmentation.ipynb)
+3. [Image Clustering](3_Clustering_Images.ipynb)
+4. [BONUS: Text Clustering](4_Bonus_Clustering_Texts.ipynb)
 
 ## Project Structure
 
@@ -164,12 +146,16 @@ ds-clustering/
 
 ## Development
 
-The project uses a Makefile for environment setup. Contributions are welcome, but please ensure that any new features or changes are thoroughly tested.
+The development workflow involves using Jupyter Notebooks for prototyping and testing. GitHub workflows handle automated testing and notifications.
+
+## Testing
+
+GitHub workflows are used for automated testing of library imports and notifications via Discord.
 
 ## Limitations
 
-- The project assumes familiarity with Python and machine learning concepts.
-- Some notebooks may require additional data preprocessing steps depending on the dataset used.
+- Limited support for older versions of Python.
+- No support for real-time clustering applications.
 
 ## License
 
